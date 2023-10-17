@@ -3,8 +3,7 @@
     // arguments (host and port):
     $host = $argv[1];
     $port = $argv[2];
-    $null = NULL;
-
+    
     // create socket:
     $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
 
@@ -19,7 +18,7 @@
     while (true) {
         // manage multiple connections:
         $changed = $clients;
-        socket_select($changed, $null, $null, 0, 10);
+        socket_select($changed, NULL, NULL, 0, 10);
 
         // check for new socket:
         if (in_array($socket, $changed)) {
