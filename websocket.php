@@ -18,7 +18,9 @@
     while (true) {
         // manage multiple connections:
         $changed = $clients;
-        socket_select($changed, NULL, NULL, 0, 10);
+        $null = NULL;
+        
+        socket_select($changed, $null, $null, 0, 10);
 
         // check for new socket:
         if (in_array($socket, $changed)) {
